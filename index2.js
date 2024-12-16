@@ -1,4 +1,5 @@
 let content = [];
+
 async function getResponse() {
     try {
         let response = await fetch("shop.json");
@@ -25,7 +26,8 @@ function showingProducts(products) {
                     <h5 class="card-title">${item.title}</h5>
                     <p class="card-text">${item.description}.</p>
                     <p class="whatsmall">Цена ${item.price} р.</p>
-                    <p>Заказать <input class="w-25" type="number"></p>
+                    <p>Заказать <input name="quantity" class="w-25" type="number"></p>
+                    <input type="hidden" name="title" value="${item.title}">
                 </li>
             `;
         });
